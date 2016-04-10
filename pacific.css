@@ -1,3 +1,15 @@
+header,
+main,
+nav,
+footer,
+figure,
+figcaption,
+aside,
+section,
+article {
+    display: block;
+}
+
 body {
     background-color: #4F6D93;
     background-image: linear-gradient(to bottom, #FFFFFF, #4F6D93);
@@ -26,6 +38,7 @@ nav {
 
 nav a {
     text-decoration: none;
+    transition: color 3s ease-out;
 }
 
 nav ul {
@@ -82,6 +95,25 @@ footer {
     text-align: center;
     font-family: Georgia, "Times New Roman", serif;
     padding: 20px;
+    clear: both;
+}
+
+label {
+    float: left;
+    display: block;
+    text-align: right;
+    width: 120px;
+    padding-right: 10px;
+}
+
+input,
+textarea {
+    display: block;
+    margin-bottom: 20px;
+}
+
+input[type="submit"] {
+    margin-left: 130px;
 }
 
 .resort {
@@ -89,7 +121,7 @@ footer {
     font-weight: bold;
 }
 
-#content {
+#contact {
     font-size: 90%;
 }
 
@@ -135,16 +167,49 @@ footer {
     display: inline;
 }
 
-header,
-main,
-nav,
-footer,
-figure,
-figcaption,
-aside,
-section,
-article {
-    display: block;
+#gallery {
+    position: relative;
+    height: 200px;
+}
+
+figure {
+    position: absolute;
+    left: 280px;
+}
+
+#gallery ul {
+    width: 300px;
+    list-style-type: none;
+}
+
+#gallery li {
+    display: inline;
+    float: left;
+    padding: 10px;
+}
+
+#gallery img {
+    border-style: none;
+}
+
+#gallery a {
+    text-decoration: none;
+    font-style: italic;
+    color: #000000;
+}
+
+#gallery span {
+    position: absolute;
+    left: -1000px;
+    opacity: 0;
+}
+
+#gallery a:hover span {
+    position: absolute;
+    top: 16px;
+    left: 320px;
+    text-align: left;
+    opacity: 1;
 }
 
 .text {
@@ -171,8 +236,21 @@ tr:nth-of-type(odd) {
     background-color: #F5FAFC;
 }
 
+video {
+    width: 100%;
+    height: auto;
+    max-width: 320px;
+}
+
+video,
+embed {
+    float: right;
+    padding-left: 20px;
+}
+
 @media only screen and (max-width: 64em) {
     body {
+        margin: 0;
         background-color: #FFFFFF;
     }
     #wrapper {
@@ -226,6 +304,13 @@ tr:nth-of-type(odd) {
     nav a {
         display: block;
     }
+    label {
+        float: none;
+        text-align: left;
+    }
+    input[type="submit"] {
+        margin-left: 0;
+    }
     #homehero,
     #yurthero,
     #trailhero {
@@ -236,6 +321,9 @@ tr:nth-of-type(odd) {
         display: inline;
     }
     #desktop {
+        display: none;
+    }
+    #gallery {
         display: none;
     }
 }
